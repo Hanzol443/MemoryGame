@@ -4,28 +4,23 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Game extends JFrame implements ActionListener
-{
+public class Game extends JFrame implements ActionListener {
+    
     private final Board board;
     private Flipping card1, card2;
-
     private final JLabel errorLabel;
     private JLabel timerLabel;
-
     private final int delay = 1000;
     ActionListener taskPerformer;
     private Timer gameTimer = new Timer(delay, taskPerformer);
-
     private JPanel boardView, labelView;
-
     private int clickCount = 0;
     private int gameTime = 0;
     private int errorCount = 0;
     private int pairsFound = 0;
     private int maxPairs = 0;
 
-    public Game()
-    {
+    public Game() {
 
         super("Hubble Memory Game");
         this.taskPerformer = new ActionListener() {
@@ -87,18 +82,14 @@ public class Game extends JFrame implements ActionListener
     }
 
     @Override
-    public void actionPerformed(ActionEvent e)
-    {
-        if(clickCount == 0)
-        {
+    public void actionPerformed(ActionEvent e){
+        if(clickCount == 0) {
             clickCount++;
             card1 = (Flipping)e.getSource();
             card1.showFront();
             card1.setEnabled(false);
         }
-        else
-        {
-
+        else {
             card2 = (Flipping)e.getSource();
             card2.showFront();
             card2.setEnabled(false);
@@ -154,12 +145,14 @@ public class Game extends JFrame implements ActionListener
         board.resetBoard();
         board.viewFill(boardView);
     }
-public static void main(String args[])
-    {
+    
+public static void main(String args[]){
         Game game = new Game();
         game.addWindowListener(new WindowAdapter() {
             @Override
-            public void windowClosing(WindowEvent e) { System.exit(0); }
+            public void windowClosing(WindowEvent e) { 
+                System.exit(0); 
+            }
         });
     }
 }

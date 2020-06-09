@@ -4,15 +4,10 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.Random;
 
-public class Board
-{
-
+public class Board {
     private final Flipping cards[];
-
     private final ClassLoader loader = getClass().getClassLoader();
-
-    public Board(int size, ActionListener AL)
-    {
+    public Board(int size, ActionListener AL) {
 
         cards = new Flipping[size];
 
@@ -35,32 +30,29 @@ public class Board
         int index;
         Random random = new Random();
         Flipping temp = new Flipping();
-        for (int i = cards.length - 1; i > 0; i--)
-        {
+        for (int i = cards.length - 1; i > 0; i--) {
+            
             index = random.nextInt(i + 1);
             temp = cards[index];
             cards[index] = cards[i];
             cards[i] = temp;
         }
 
-        for(int i = 0; i < cards.length; i++)
-        {
+        for(int i = 0; i < cards.length; i++) { 
+       
             cards[i].hideFront();
         }
     }
-
-    public void viewFill(JPanel view)
-    {
+  
+    public void viewFill(JPanel view){
         for (Flipping c : cards) {
             view.add(c);
         }
     }
 
-    public void resetBoard()
-    {
-
-        for(int i = 0; i < cards.length; i++)
-        {
+    public void resetBoard() {
+        for(int i = 0; i < cards.length; i++){
+        
             cards[i].setEnabled(true);
             cards[i].hideFront();
         }
@@ -68,14 +60,18 @@ public class Board
         int index;
         Random random = new Random();
         Flipping temp = new Flipping();
-        for (int i = cards.length - 1; i > 0; i--)
-        {
+        for (int i = cards.length - 1; i > 0; i--) {
+    
             index = random.nextInt(i + 1);
             cards[index] = cards[i];
             cards[i] = temp;
         }
     }
 
-    public int getSize() {return cards.length;}
-    public Flipping[] getCards(){return cards;}
+    public int getSize() {
+        return cards.length;
+    }
+    public Flipping[] getCards(){
+        return cards;
+    }
 }
