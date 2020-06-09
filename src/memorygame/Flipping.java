@@ -1,0 +1,58 @@
+package memorygame;
+
+import javax.swing.*;
+
+public class Flipping extends JButton
+{
+    // Resource loader
+    private ClassLoader loader = getClass().getClassLoader();
+
+    // Card front icon
+    private Icon front;
+    // Card back image
+    private Icon back = new ImageIcon(loader.getResource("res/Back.jpg"));
+
+    // ID + Name
+    private int id;
+    private String customName;
+
+    // Default constructor
+    public Flipping() { super(); }
+
+    // Constructor with card front initialization
+    public Flipping(ImageIcon frontImage)
+    {
+        super();
+        front = frontImage;
+        super.setIcon(front);
+        super.setDisabledIcon(front);
+    }
+
+    // Set the image used as the front of the card
+    public void setFrontImage(ImageIcon frontImage) { front = frontImage; }
+
+    // Card flipping functions
+    public void showFront() {
+        super.setIcon(front);
+    }
+    public void hideFront() {
+        super.setIcon(back);
+    }
+
+    public void lock(boolean toBeLocked){
+        if (toBeLocked){
+            super.setDisabledIcon(back);
+        }
+        else{
+            super.setDisabledIcon(front);
+        }
+    }
+
+    // Metadata: ID number
+    public int id() { return id; }
+    public void setID(int i) { id = i; }
+
+    // Metadata: Custom name
+    public String customName() { return customName; }
+    public void setCustomName(String s) { customName = s; }
+}
