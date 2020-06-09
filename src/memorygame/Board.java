@@ -18,13 +18,13 @@ public class Board
         cards = new Flipping[size];
 
         // Fill the Cards array
-        int imageIdx = 1;
+        int idx = 1;
         for (int i = 0; i < size; i += 2) {
 
             // Load the front image from the resources folder
-            String imgPath = "res/card" + imageIdx + ".jpg";
+            String imgPath = "res/card" + idx + ".jpg";
             ImageIcon img = new ImageIcon(loader.getResource(imgPath));
-            imageIdx++;  // get ready for the next pair of cards
+            idx++;  // get ready for the next pair of cards
 
             // Setup two cards at a time
             Flipping c1 = new Flipping(img);
