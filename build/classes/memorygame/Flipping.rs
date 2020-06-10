@@ -1,3 +1,0 @@
-Flipping
-FlippableCard
-MemoryGame.Flipping

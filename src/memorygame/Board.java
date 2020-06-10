@@ -4,9 +4,19 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.util.Random;
 
+/**
+ *
+ * @author Hansel
+ */
 public class Board {
     private final Flipping cards[];
     private final ClassLoader loader = getClass().getClassLoader();
+
+    /**
+     *
+     * @param size
+     * @param AL
+     */
     public Board(int size, ActionListener AL) {
 
         cards = new Flipping[size];
@@ -44,12 +54,19 @@ public class Board {
         }
     }
   
+    /**
+     *
+     * @param view
+     */
     public void viewFill(JPanel view){
         for (Flipping c : cards) {
             view.add(c);
         }
     }
 
+    /**
+     *
+     */
     public void resetBoard() {
         for(int i = 0; i < cards.length; i++){
         
@@ -68,9 +85,18 @@ public class Board {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public int getSize() {
         return cards.length;
     }
+
+    /**
+     *
+     * @return
+     */
     public Flipping[] getCards(){
         return cards;
     }

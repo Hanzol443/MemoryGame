@@ -4,6 +4,10 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/**
+ *
+ * @author Hansel
+ */
 public class Game extends JFrame implements ActionListener {
     
     private final Board board;
@@ -20,6 +24,9 @@ public class Game extends JFrame implements ActionListener {
     private int pairsFound = 0;
     private int maxPairs = 0;
 
+    /**
+     *
+     */
     public Game() {
 
         super("Hubble Memory Game");
@@ -81,6 +88,10 @@ public class Game extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    /**
+     *
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e){
         if(clickCount == 0) {
@@ -146,7 +157,11 @@ public class Game extends JFrame implements ActionListener {
         board.viewFill(boardView);
     }
     
-public static void main(String args[]){
+    /**
+     *
+     * @param args
+     */
+    public static void main(String args[]){
         Game game = new Game();
         game.addWindowListener(new WindowAdapter() {
             @Override
