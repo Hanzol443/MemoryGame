@@ -1,3 +1,6 @@
+/**
+ * Memory Game, a minigame for Datos Party, first project of CE1103, IS-2020
+ */
 package memorygame;
 
 import java.awt.event.*;
@@ -5,17 +8,18 @@ import javax.swing.*;
 import java.util.Random;
 
 /**
- *
- * @author Hansel
+ * Canvas class, this class place and flips the cards oportunatelly.
+ * @author Hansel Hampton
+ * @version 1.3
  */
 public class Board {
     private final Flipping cards[];
     private final ClassLoader loader = getClass().getClassLoader();
 
     /**
-     *
-     * @param size
-     * @param AL
+     *Board method that sets the flippable cards in position and ready to flip.
+     * @param size nteger dimentions of the board.
+     * @param AL action realized when the board is generated.
      */
     public Board(int size, ActionListener AL) {
 
@@ -24,7 +28,7 @@ public class Board {
         int idx = 1;
         for (int i = 0; i < size; i += 2) {
 
-            String imgPath = "res/card" + idx + ".jpg";
+            String imgPath = "/res/card" + idx + ".jpg";
             ImageIcon img = new ImageIcon(loader.getResource(imgPath));
             idx++;
 
@@ -55,7 +59,7 @@ public class Board {
     }
   
     /**
-     *
+     *Add things to show on the board.
      * @param view
      */
     public void viewFill(JPanel view){
@@ -65,7 +69,7 @@ public class Board {
     }
 
     /**
-     *
+     * Return the game to it initial state.
      */
     public void resetBoard() {
         for(int i = 0; i < cards.length; i++){
@@ -86,16 +90,16 @@ public class Board {
     }
 
     /**
-     *
-     * @return
+     *Get the total of cards in the game.
+     * @return cards.lenght
      */
     public int getSize() {
         return cards.length;
     }
 
     /**
-     *
-     * @return
+     * Get the array of cards of the game.
+     * @return cards
      */
     public Flipping[] getCards(){
         return cards;

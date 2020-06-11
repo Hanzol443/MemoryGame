@@ -1,3 +1,6 @@
+/**
+ * Memory Game, a minigame for Datos Party, first project of CE1103, IS-2020
+ */
 package memorygame;
 
 import java.awt.*;
@@ -5,8 +8,10 @@ import java.awt.event.*;
 import javax.swing.*;
 
 /**
- *
- * @author Hansel
+ * Main class, creates the game's window & manages the game itself.
+ * @author Hansel Hampton
+ * @version 1.3
+ 
  */
 public class Game extends JFrame implements ActionListener {
     
@@ -25,7 +30,7 @@ public class Game extends JFrame implements ActionListener {
     private int maxPairs = 0;
 
     /**
-     *
+     * Game method, builds the previous environment for the game.
      */
     public Game() {
 
@@ -89,8 +94,8 @@ public class Game extends JFrame implements ActionListener {
     }
 
     /**
-     *
-     * @param e
+     *Handle the card-clicking process.
+     * @param e ActionEvent at clicking a card.
      */
     @Override
     public void actionPerformed(ActionEvent e){
@@ -158,7 +163,7 @@ public class Game extends JFrame implements ActionListener {
     }
     
     /**
-     *
+     *Main method that initialize the whole minigame.
      * @param args
      */
     public static void main(String args[]){
